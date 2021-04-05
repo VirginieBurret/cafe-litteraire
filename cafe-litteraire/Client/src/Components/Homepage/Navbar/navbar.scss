@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+.navbar{
+  
+   
+   
+    
+    &__title{
+        font-size:3.5rem;
+        margin-top:0rem;
+        width: 20rem;
+        margin-left: 2rem;
+        color: #f2d1ae;
+        font-family: 'Parisienne', cursive;
+    }
+
+    &__buttons{
+    width: 12rem;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    display: flex;
+    justify-content: space-around;
+    }
+}
+
+.register-form{
+    padding: 1rem;
+    background-color : rgba(255,255,255,0.85);
+    border-radius: 5px;
+}
+
+    .register-title{
+        text-align: center;
+        padding: 1rem;
+    }
+
