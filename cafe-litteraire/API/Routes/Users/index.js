@@ -8,13 +8,12 @@ const jwt = require('jsonwebtoken');
 
 
 Router.post('/register', register = async (req,res) => {
-   
+   console.log('req.body', req.body);
     const { username, email, age, password } = req.body;
     
         //crypter mon mdp
        const hash = await bcrypt.hash(password, saltRounds) 
             const user = new User() 
-        
         user.username = username 
         user.email = email 
         user.age = age
