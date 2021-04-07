@@ -1,4 +1,4 @@
-import { React, useState, } from 'react';
+import { React, useEffect, useState, } from 'react';
 import './navbar.scss';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import axios from "axios";
@@ -22,27 +22,22 @@ const hideForm = () => {
 }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    
     console.log('envoie du formulaire');
     const data = {email, username, password, age};
-    axios({
-      method:'post',
-      url: 'http://localhost:5000/api/users/register',
-      data : `${data}`,
-      
-    }).then( (response)=>{
-      console.log(response)
-    }).catch((error) => {
-      console.log('ERROR',error)
-    }) 
     
-    
-  
-  
+    axios.post('http://localhost:5000/api/users/register',data)
+     .then( (response)=>{
+      console.log('SUCCESS',response)
+      setRegisterForm(!showRegisterForm)
+    }).catch(error => {
+     console.log(error)
+    })
   
  }
-    return (
 
+
+    return (
 <div className="navbar">
     <p className="navbar__title">Le cercle des litteraires</p>
 
