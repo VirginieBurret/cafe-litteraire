@@ -13,7 +13,6 @@ const RegisterForm = () => {
     const displayRegisterForm = () => {
         setRegisterForm(!showRegisterForm)
     }
-
 const [hideRegisterForm, sethideRegisterForm] = useState(true);
 
 const hideForm = () => {
