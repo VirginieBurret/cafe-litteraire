@@ -44,7 +44,8 @@ Router.post('/register', register = async (req,res) => {
     
     User.findOne({email})// ça cherche l'user PUIS   
     .then((user) => {
-      
+         
+        console.log("You are logged",req.body)
         if(!user){
     
             return res.status(401).json('user not found')
