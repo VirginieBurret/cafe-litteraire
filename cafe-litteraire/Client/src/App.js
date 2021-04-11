@@ -13,12 +13,8 @@ import 'semantic-ui-css/semantic.min.css'
 function App() {
   return (
     <Router>
-    <div>
-     <Homepage/>
-    </div>
-    
        <Switch>
-          <Route exact path="/about">
+          <Route exact path="/">
             <Homepage />
            </Route>
           <Route path="/board">

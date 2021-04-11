@@ -11,8 +11,12 @@ const LoginForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
+    const [user, setUser] = useState()
     const history = useHistory();
-    
+
+    console.log('user',user)
+
+
     const displayLoginForm = () => {
         setLoginForm(!showLoginForm)
     }
@@ -30,13 +34,17 @@ const hideForm = () => {
         
         axios.post('http://localhost:4000/api/users/login',data)
          .then( (response)=>{
-          console.log('SUCCESS',response)
-         window.location="/board"
+            const { token } = response.data;
+            localStorage.setItem('token', token);
+            setUser(response.data.username)
+            console.log('SUCCESS',response)
+            history.push("/board")
         }).catch(error => {
          console.log(error)
         })
       
      }
+     
     return (
         <div className="registerForm">
             <Form className="register-form" onSubmit={handleSubmit}  >
