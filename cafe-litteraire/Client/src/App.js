@@ -1,13 +1,32 @@
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 import Homepage from './Components/Homepage';
+import Board from './Components/Board';
 import 'antd/dist/antd.css';
 import 'semantic-ui-css/semantic.min.css'
+
 function App() {
   return (
-    <div className="App">
-      <Homepage/>
+    <Router>
+    <div>
+     <Homepage/>
     </div>
+    
+       <Switch>
+          <Route exact path="/about">
+            <Homepage />
+           </Route>
+          <Route path="/board">
+            <Board />
+          </Route>
+          </Switch>
+       
+    </Router>
   );
 }
 

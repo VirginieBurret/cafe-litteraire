@@ -25,7 +25,7 @@ const hideForm = () => {
         console.log('envoie du formulaire');
         const data = {email, username, password, age};
         
-        axios.post('http://localhost:5000/api/users/register',data)
+        axios.post('http://localhost:4000/api/users/register',data)
          .then( (response)=>{
           console.log('SUCCESS',response)
           setRegisterForm(!showRegisterForm)

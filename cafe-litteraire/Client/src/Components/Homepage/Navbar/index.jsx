@@ -3,24 +3,25 @@ import './navbar.scss';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import axios from "axios";
 import RegisterForm from './registerForm';
+import LoginForm from './loginForm';
+
 const Navbar = () => {
    
     const [showRegisterForm, setRegisterForm] = useState(false);
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [username, setUsername] = useState('')
-    const [age, setAge] = useState('')
+    const [showLoginForm, setLoginForm ] = useState(false);
+
     const displayRegisterForm = () => {
+        setLoginForm(false)
         setRegisterForm(!showRegisterForm)
+        
     }
 
-   
-
-const [hideRegisterForm, sethideRegisterForm] = useState(true);
-
-const hideForm = () => {
-    setRegisterForm(!showRegisterForm)
-}
+    const displayLoginForm = () => {
+        setRegisterForm(false)
+        setLoginForm(!showLoginForm)
+        
+    }
+console.log(showLoginForm)
 
 
     return (
@@ -29,10 +30,11 @@ const hideForm = () => {
 
     <div className="navbar__buttons">
         <button className="navbar__buttons__elmt" onClick={displayRegisterForm}>Inscription</button>
-        <button className="navbar__buttons__elmt">Connexion</button>
+        <button className="navbar__buttons__elmt" onClick={displayLoginForm}>Connexion</button>
         </div>
         
         { showRegisterForm ? <RegisterForm /> : ''}
+        { showLoginForm ? (<LoginForm />) : ''}
           
 </div>
 
