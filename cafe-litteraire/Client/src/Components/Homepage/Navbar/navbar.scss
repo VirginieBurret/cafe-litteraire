@@ -21,6 +21,13 @@
     right: 15px;
     display: flex;
     justify-content: space-around;
+    height: 3rem;
+
+     &__elmt{
+         background-color: white;
+         border: none;
+         border-radius: 5px;
+     }
     }
 }
 
@@ -28,6 +35,7 @@
     padding: 1rem;
     background-color : rgba(255,255,255,0.85);
     border-radius: 5px;
+    
 }
 
     .register-title{
